@@ -98,7 +98,23 @@ unset use_color safe_term match_lhs sh
 #alias free='free -m'                      # show sizes in MB
 #alias np='nano -w PKGBUILD'
 #alias more=less
+
 alias inano='nano $(fzf -m --preview="bat --color=always {}")'
+
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+alias pacfzf='pacman -Slq | fzf --multi --preview "pacman -Si {}" | xargs -ro sudo pacman -S'
+
+alias yayfzf='yay -Slq | fzf --multi --preview "yay -Si {}" | xargs -ro sudo yay -S'
 
 xhost +local:root > /dev/null 2>&1
 
