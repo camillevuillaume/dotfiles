@@ -27,3 +27,13 @@ require("lazy").setup("plugins")
 
 -- Enable virtual text for diagnostics
 vim.diagnostic.config({ virtual_text = true })
+
+-- Enable mouse
+vim.opt.mouse = "a"
+
+-- remap movement keys
+vim.keymap.set('n', '<C-Left>',  '<C-w>h')
+vim.keymap.set('n', '<C-Down>',  '<C-w>j')
+vim.keymap.set('n', '<C-Up>',    '<C-w>k')
+vim.keymap.set('n', '<C-Right>', '<C-w>l')
+

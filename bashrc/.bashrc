@@ -103,6 +103,8 @@ alias inano='nano $(fzf -m --preview="bat --color=always {}")'
 
 source /usr/share/fzf/key-bindings.bash
 source /usr/share/fzf/completion.bash
+# fuzzy search in bash
+# source <( fzf --bash)
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -135,3 +137,5 @@ export XMODIFIERS=@im=fcitx
 shopt -s histappend
 
 eval "$(starship init bash)"
+
+nerdfetch
