@@ -136,6 +136,9 @@ export XMODIFIERS=@im=fcitx
 # Enable history appending instead of overwriting.  #139609
 shopt -s histappend
 
+# kitty ssh fix
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="TERM=xterm-256color ssh" 
+
 eval "$(starship init bash)"
 
-nerdfetch
+nerdfetch -e
