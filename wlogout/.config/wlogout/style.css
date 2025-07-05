@@ -34,14 +34,6 @@ button:focus, button:active, button:hover {
     background-image: url("/home/camille/.config/wlogout/icons/logout.svg");
 }
 
-#suspend {
-    background-image: url("/home/camille/.config/wlogout/icons/suspend.svg");
-}
-
-#hibernate {
-    background-image: url("/home/camille/.config/wlogout/icons/hibernate.svg");
-}
-
 #shutdown {
     background-image: url("/home/camille/.config/wlogout/icons/shutdown.svg");
 }
